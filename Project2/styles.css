@@ -33,3 +33,44 @@ nav ul li a {
   text-decoration: none;
   color: black;
 }
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 7rem 23rem;
+}
+
+.name {
+  font-size: 27px;
+}
+
+.intro-left {
+  padding-top: 7%;
+}
+
+.intro-left h2 {
+  padding: 0.25rem;
+}
+
+.intro-left p {
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1rem;
+}
+
+.intro-right img {
+  width: 22.5rem;
+  border-radius: 15px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.button::hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
