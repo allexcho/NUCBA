@@ -98,12 +98,12 @@ nav ul li a {
   border-color: #334218;
 }
 
-.bottommain {
+.buttommain {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
 }
 
-.bottomimgs ul {
+.buttomimgs ul {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -112,17 +112,17 @@ nav ul li a {
   padding: 3rem;
 }
 
-.bottomimgs img {
+.buttomimgs img {
   width: 20rem;
   border-radius: 0.25rem;
 }
 
-.bottomimgs ul {
+.buttomimgs ul {
   list-style-type: none;
   padding-bottom: 2rem;
 }
 
-.bottomimgs p {
+.buttomimgs p {
   font-size: 1rem;
   text-align: center;
   padding: 0 3rem 2rem 3rem;
