@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b, 0 0 30px #ff7e5f;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+#pizza-id {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#pizza-id:focus {
+  border-color: #ff7e5f;
+}
+
+#search-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  color: white;
+  cursor: pointer;
+  transition: background 0.5s, transform 0.5s;
+}
+
+#search-form button:hover {
+  background: linear-gradient(90deg, #feb47b, #ff7e5f);
+  transform: scale(1.05);
+}
+
+#search-form button:active {
+  transform: scale(0.98);
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 25px;
+}
+
+#search-form {
+  padding: 25px;
+}
+
+.pizza-card img {
+  padding: 50px;
+  border-radius: 10%;
+}
+
+.pizza-card h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b, 0 0 30px #ff7e5f;
+}
+
+.pizza-card p {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b, 0 0 30px #ff7e5f;
+}
