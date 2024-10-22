@@ -1,53 +1,90 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Hanken Grotesk", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
 body {
-    background-color: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 75px;
 }
 
 .container {
-    background: #FFDAB9;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 400px;
+  background: #ffdab9;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 400px;
 }
 
 h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 input[type="number"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #FAEBD7;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #faebd7;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 input[type="number"]:focus {
-    border-color: #FAEBD7;
-    outline: none;
+  border-color: #faebd7;
+  outline: none;
 }
 
 button {
-    padding: 10px;
-    font-size: 16px;
-    color: black;
-    background-color: #FAEBD7;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: #faebd7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pokemon-name {
+  font-size: 50px;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.pokemon-card img {
+  margin: 30px 0 30px 0;
+}
+
+.pokemon-type {
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.pokemon-stats {
+  font-size: 16px;
 }
