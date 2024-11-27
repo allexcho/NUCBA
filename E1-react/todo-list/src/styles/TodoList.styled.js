@@ -1,66 +1,64 @@
+import styled from "styled-components";
 
-import styled from 'styled-components';
-
-// Responsive Container
 export const AppContainer = styled.div`
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-
-  @media (max-width: 768px) {
-    width: 90%;
-    padding: 10px;
-  }
+  padding: 1rem;
+  font-family: "Arial", sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 `;
 
-// Header Styling
 export const Header = styled.header`
- 
   text-align: center;
-  padding: 20px;
-  
+  font-size: 1.8rem;
+  border-bottom: 2px solid #eee;
 `;
 
-// Input Container
 export const InputContainer = styled.div`
   display: flex;
   margin: 20px 0;
+  gap: 10px;
 `;
 
-// Task Input Styling
 export const TaskInput = styled.input`
   flex-grow: 1;
   padding: 10px;
- 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 `;
 
-// Add Button Styling
 export const AddButton = styled.button`
-  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #bdb76b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 `;
 
-// Tasks List Container
 export const TasksList = styled.ul`
   list-style-type: none;
   padding: 0;
 `;
 
-// Individual Task Item
 export const TaskItem = styled.li`
   display: flex;
-  background-color: ${props => props.completed ? '#E0E0E0' : 'white'};
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
   padding: 10px;
-  text-decoration: ${props => props.completed ? 'line-through' : 'none'};
 `;
 
-// Task Text
 export const TaskText = styled.span`
   flex-grow: 1;
   margin-right: 10px;
+  font-size: 1rem;
+  color: ${(props) => (props.completed ? "#6c757d" : "#333")};
 `;
 
-// Action Buttons
 export const ActionButtons = styled.div`
   display: flex;
   gap: 10px;
@@ -68,11 +66,28 @@ export const ActionButtons = styled.div`
 
 export const CompleteButton = styled.button`
   padding: 5px 10px;
- 
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #218838;
+  }
 `;
 
 export const DeleteButton = styled.button`
-  
   padding: 5px 10px;
- 
+  border: none;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #c82333;
+  }
 `;
