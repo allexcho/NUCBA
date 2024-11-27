@@ -34,8 +34,8 @@ export const AddButton = styled.button`
   border: none;
   border-radius: 5px;
   background-color: #bdb76b;
-  color: white;
-  font-size: 1rem;
+  color: black;
+  font-size: 0.9rem;
   cursor: pointer;
 `;
 
@@ -46,17 +46,29 @@ export const TasksList = styled.ul`
 
 export const TaskItem = styled.li`
   display: flex;
+  background-color: ${(props) => (props.completed ? "#bdb76b" : "white")};
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
   padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 export const TaskText = styled.span`
   flex-grow: 1;
   margin-right: 10px;
   font-size: 1rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
   color: ${(props) => (props.completed ? "#6c757d" : "#333")};
+  text-decoration: ${(props) => (props.completed ? "line-through" : "none")};
 `;
 
 export const ActionButtons = styled.div`
