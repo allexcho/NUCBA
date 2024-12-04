@@ -26,7 +26,7 @@ export const TaskProvider = ({ children }) => {
     );
 
     if (taskExists) {
-      setError("Esta tarea ya existe");
+      setError("This task already exists.");
       return;
     }
 
@@ -113,7 +113,7 @@ const TodoList = () => {
       {tasks.length > 0 && (
         <ActionButtons>
           <DeleteButton onClick={clearAllTasks}>
-            Borrar todas las tareas
+            Delete all tasks.
           </DeleteButton>
         </ActionButtons>
       )}
