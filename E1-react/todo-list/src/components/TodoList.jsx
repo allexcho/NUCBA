@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 import {
   AppContainer,
   Header,
@@ -11,13 +11,25 @@ import {
   ActionButtons,
   CompleteButton,
   DeleteButton,
+  ErrorMessage,
 } from "../styles/TodoList.styled";
 
-const TodoList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
+const TaskContext = createContext();
 
-  const addTask = () => {
+export const TaskProvider = ({ children }) => {
+  const [tasks, setTasks] = useState([]);
+  const [error, setError] = useState("");
+
+  const addTask = (newTask) => {
+    const taskExists = tasks.some(
+      (task) => task.text.toLowerCase() === newTask.toLowerCase().trim()
+    );
+
+    if (taskExists) {
+      setError("Esta tarea ya existe");
+      return;
+    }
+
     if (newTask.trim()) {
       setTasks([
         ...tasks,
@@ -27,7 +39,7 @@ const TodoList = () => {
           completed: false,
         },
       ]);
-      setNewTask("");
+      setError("");
     }
   };
 
@@ -43,6 +55,46 @@ const TodoList = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  const clearAllTasks = () => {
+    setTasks([]);
+  };
+
+  return (
+    <TaskContext.Provider
+      value={{
+        tasks,
+        addTask,
+        completeTask,
+        deleteTask,
+        clearAllTasks,
+        error,
+      }}
+    >
+      {children}
+    </TaskContext.Provider>
+  );
+};
+
+export const useTaskContext = () => {
+  const context = useContext(TaskContext);
+  if (!context) {
+    throw new Error("useTaskContext debe ser usado dentro de un TaskProvider");
+  }
+  return context;
+};
+
+const TodoList = () => {
+  const [newTask, setNewTask] = useState("");
+  const { tasks, addTask, completeTask, deleteTask, clearAllTasks, error } =
+    useTaskContext();
+
+  const handleAddTask = () => {
+    addTask(newTask);
+    if (!error) {
+      setNewTask("");
+    }
+  };
+
   return (
     <AppContainer>
       <Header>
@@ -55,8 +107,16 @@ const TodoList = () => {
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add Task..."
         />
-        <AddButton onClick={addTask}>Add Task</AddButton>
+        <AddButton onClick={handleAddTask}>Add Task</AddButton>
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </InputContainer>
+      {tasks.length > 0 && (
+        <ActionButtons>
+          <DeleteButton onClick={clearAllTasks}>
+            Borrar todas las tareas
+          </DeleteButton>
+        </ActionButtons>
+      )}
       <TasksList>
         {tasks.map((task) => (
           <TaskItem key={task.id} completed={task.completed}>
@@ -76,4 +136,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export { TodoList };

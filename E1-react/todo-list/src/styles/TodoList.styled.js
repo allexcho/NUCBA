@@ -103,3 +103,10 @@ export const DeleteButton = styled.button`
     background-color: #c82333;
   }
 `;
+
+export const ErrorMessage = styled.p`
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: center;
+`;

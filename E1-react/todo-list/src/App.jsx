@@ -1,12 +1,12 @@
-import TodoList from "./components/TodoList"
+import { TodoList, TaskProvider } from "./components/TodoList"
 
 
 function App() {
-  
+
   return (
-    <>
-      <TodoList/>
-    </>
+    <TaskProvider>
+      <TodoList />
+    </TaskProvider>
   )
 }
 
