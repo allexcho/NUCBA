@@ -107,7 +107,7 @@ const TodoList = () => {
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add Task..."
         />
-        <AddButton onClick={handleAddTask}>Add Task</AddButton>
+        <AddButton onClick={handleAddTask}>Add</AddButton>
         {error && <ErrorMessage>{error}</ErrorMessage>}
       </InputContainer>
       {tasks.length > 0 && (
